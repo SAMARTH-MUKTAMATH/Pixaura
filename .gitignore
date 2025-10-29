@@ -1,0 +1,69 @@
+# Dependencies - Most Important
+node_modules/
+jspm_packages/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+*.lcov
+.nyc_output/
+
+# Build outputs - Critical for your stack
+dist/
+dist-ssr/
+build/
+.svelte-kit/
+package/
+.next/
+.nuxt/
+
+# Environment variables
+.env*
+!.env.example
+
+# Cache directories
+.cache/
+.parcel-cache/
+.npm/
+.eslintcache
+*.tsbuildinfo
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS generated files
+.DS_Store
+Thumbs.db
+*.tmp
+
+# Docker (for your setup)
+.docker/
+
+# Database
+*.sqlite
+*.sqlite3
+*.db
+
+# Lock files (optional - consider your team preference)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
