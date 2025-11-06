@@ -19,6 +19,9 @@ import star_group from './star_group.png'
 import credit_star from './credit_star.svg'
 import profile_icon from './profile_icon.png'
 import favicon from './favicon.png'
+import camera from './camera.jpeg'
+import cartoon from './cartoon.jpeg'
+import panda from './panda.jpeg'
 
 export const assets = {
     logo,
@@ -37,6 +40,9 @@ export const assets = {
     credit_star,
     profile_icon,
     favicon,
+    camera,
+    cartoon,
+    panda,
 }
 
 // export const stepsData = [
