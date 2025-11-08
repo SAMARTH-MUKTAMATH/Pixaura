@@ -125,6 +125,7 @@ const AppContextProvider = ({ children }) => {
     setToken(null);
     setUser(null);
     setCredit(0);
+    navigate('/');
     toast.success('Logged out successfully');
   };
 
