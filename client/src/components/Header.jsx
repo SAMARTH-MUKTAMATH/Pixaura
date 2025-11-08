@@ -6,21 +6,20 @@ import { useContext } from 'react';
 import { AppContext } from '../context/app-context';
 import { useNavigate } from 'react-router-dom';
 
-const Header = () => {
 
+const Header = () => {
   const {user, setShowLogin} = useContext(AppContext);
   const navigate = useNavigate();
 
-const onClickHandler = () => {
-  if(user) {
-    navigate('/result');
-  } else {
-    setShowLogin(true);
-  }
-    
+
+  const onClickHandler = () => {
+    if(user) {
+      navigate('/result');
+    } else {
       setShowLogin(true);
     }
-  
+  }
+
 
   return (
     <motion.div 
@@ -37,8 +36,21 @@ const onClickHandler = () => {
         whileHover={{ scale: 1.05 }}
       > 
         <p>best image generator</p>
-        <img src={assets.star_icon} alt="" />
+        <motion.img 
+          src={assets.star_icon} 
+          alt=""
+          animate={{ 
+            rotate: [0, 360],
+            scale: [1, 1.2, 1]
+          }}
+          transition={{ 
+            duration: 3, 
+            repeat: Infinity, 
+            ease: "easeInOut" 
+          }}
+        />
       </motion.div>
+
 
       <motion.h1 
         className='text-4xl max-w-[300px] sm:text-7xl sm:max-w-[590px] mx-auto mt-10 text-center'
@@ -49,6 +61,7 @@ const onClickHandler = () => {
         Type the text, watch <span className='text-blue-600 text-8xl'>what's</span> next
       </motion.h1>
 
+
       <motion.p 
         className='text-center max-w-xl mx-auto mt-5'
         initial={{ opacity: 0 }}
@@ -57,6 +70,7 @@ const onClickHandler = () => {
       >
         Discover the power of AI with our image generator. Create stunning images from text in just a few simple steps.
       </motion.p>
+
 
       <motion.button onClick={onClickHandler}
         className='sm:text-lg text-white bg-black w-auto mt-8 px-12 py-2.5 flex items-center gap-2 rounded-full'
@@ -70,36 +84,70 @@ const onClickHandler = () => {
         whileTap={{ scale: 0.95 }}
       >
         Get Started
-        <img className="h-6" src={assets.star_group} alt="" />
+        <motion.img 
+          className="h-6" 
+          src={assets.star_group} 
+          alt=""
+          animate={{
+            rotate: [0, 360],
+            y: [0, -2, 0]
+          }}
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
       </motion.button>
 
+
+      {/* Larger Width Infinite Scrolling Images */}
       <motion.div 
-        className='flex flex-wrap justify-center mt-16 gap-3'
+        className='flex justify-center mt-16 overflow-hidden max-w-4xl'
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 1.0 }}
-      > 
-        {Array(6).fill('').map((item, index) => (
-          <motion.img 
-            className="rounded hover:scale-105 transition-all duration-300 cursor-pointer max-sm:w-10"
-            src={index % 2 === 0 ? assets.sample_img_2 : assets.sample_img_1} 
-            alt=""
-            key={index}
-            width={70}
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ 
-              duration: 0.5, 
-              delay: 1.2 + (index * 0.1) 
-            }}
-            whileHover={{ 
-              scale: 1.1,
-              rotate: 2,
-              transition: { duration: 0.2 }
-            }}
-          />
-        ))}
+      >
+        <motion.div 
+          className='flex gap-4'
+          animate={{ x: [0, -768] }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+        > 
+          {/* Create multiple sets for seamless loop */}
+          {Array(12).fill('').map((item, index) => {
+            const images = [assets.robot, assets.dog, assets.parot, assets.type, assets.alien, assets.cartoon];
+            
+            return (
+              <motion.div
+                key={`image-${index}`}
+                className="relative group flex-shrink-0"
+                whileHover={{ 
+                  scale: 1.1,
+                  y: -5,
+                  zIndex: 10
+                }}
+              >
+                <img 
+                  className="rounded hover:scale-105 transition-all duration-300 cursor-pointer max-sm:w-16"
+                  src={images[index % 6]}
+                  alt=""
+                  width={120}
+                  style={{ 
+                    imageRendering: 'crisp-edges',
+                    backfaceVisibility: 'hidden',
+                    transform: 'translateZ(0)'
+                  }}
+                />
+              </motion.div>
+            );
+          })}
+        </motion.div>
       </motion.div>
+
 
       <motion.p 
         className='mt-2 text-neutral-600'
@@ -112,5 +160,6 @@ const onClickHandler = () => {
     </motion.div>
   )
 }
+
 
 export default Header

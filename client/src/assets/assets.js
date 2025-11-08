@@ -22,6 +22,12 @@ import favicon from './favicon.png'
 import camera from './camera.jpeg'
 import cartoon from './cartoon.jpeg'
 import panda from './panda.jpeg'
+import robot from './robot.jpeg'
+import dog from './dog.png'
+import parot from './parot.png'
+import type from './type.png'
+import alien from './alien.png'
+
 
 export const assets = {
     logo,
@@ -43,6 +49,11 @@ export const assets = {
     camera,
     cartoon,
     panda,
+    robot,
+    dog,
+    parot,
+    type,
+    alien,
 }
 
 // export const stepsData = [

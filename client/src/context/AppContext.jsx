@@ -17,12 +17,19 @@ const AppContextProvider = ({ children }) => {
     if (!token) return;
     
     try {
-      const { data } = await axios.post(backendUrl + '/api/users/credits', {}, {
+      // ✅ Fixed: Changed POST to GET (matches your backend)
+      const { data } = await axios.get(backendUrl + '/api/users/credits', {
         headers: { token: token }
       });
       
+      console.log('=== CREDIT LOADING DEBUG ===');
+      console.log('Full backend response:', data);
+      console.log('Credits found:', data.credits || data.credit || data.creditBalance || data.user?.creditBalance);
+      console.log('==========================');
+      
       if (data.success) {
-        const creditsValue = data.credits || data.credit || data.user?.credits || 0;
+        const creditsValue = data.credits || data.credit || data.creditBalance || data.user?.creditBalance || 0;
+        console.log('Setting credits to:', creditsValue);
         setCredit(creditsValue);
         setUser(data.user);
       }
@@ -57,7 +64,21 @@ const AppContextProvider = ({ children }) => {
 
       if (data.success) {
         console.log('Image generated successfully');
-        loadCreditsData(); // Refresh credits after successful generation
+        console.log('Credits remaining from response:', data.creditsRemaining);
+        
+        // ✅ Fixed: Update credit immediately from response
+        if (data.creditsRemaining !== undefined) {
+          setCredit(data.creditsRemaining);
+          console.log('Updated credits to:', data.creditsRemaining);
+        } else {
+          // ✅ Fixed: Deduct 1 credit immediately if no creditsRemaining in response
+          setCredit(prevCredit => {
+            const newCredit = Math.max(0, prevCredit - 1);
+            console.log('Deducted 1 credit, new total:', newCredit);
+            return newCredit;
+          });
+        }
+        
         return data.imageUrl;
       } else {
         console.log('Image generation failed:', data.message);
@@ -78,8 +99,6 @@ const AppContextProvider = ({ children }) => {
           navigate('/buy');
           return null;
         }
-        
-        loadCreditsData(); // Refresh credits even on failure
       }
     } catch (error) {
       console.log('=== FRONTEND IMAGE GENERATION ERROR ===');
