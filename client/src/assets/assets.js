@@ -27,7 +27,7 @@ import dog from './dog.png'
 import parot from './parot.png'
 import type from './type.png'
 import alien from './alien.png'
-
+import animals from './animals.png'
 
 export const assets = {
     logo,
@@ -54,6 +54,7 @@ export const assets = {
     parot,
     type,
     alien,
+    animals,
 }
 
 // export const stepsData = [

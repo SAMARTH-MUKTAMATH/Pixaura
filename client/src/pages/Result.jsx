@@ -1,14 +1,27 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useRef, useEffect } from 'react'
 import { assets } from '../assets/assets'
 import { AppContext } from '../context/app-context';
 
+
 const Result = () => {
-  const [image, setImage] = useState(assets.sample_img_1)
+  const [image, setImage] = useState(assets.animals)
   const [isImageLoaded, setIsImageLoaded] = useState(false)
   const [loading, setLoading] = useState(false)
   const [input, setInput] = useState('')
+  const textareaRef = useRef(null)
+
 
   const { generateImage } = useContext(AppContext);
+
+
+  // Auto-resize textarea
+  useEffect(() => {
+    if (textareaRef.current) {
+      textareaRef.current.style.height = 'auto'
+      textareaRef.current.style.height = textareaRef.current.scrollHeight + 'px'
+    }
+  }, [input])
+
 
   const onSubmitHandler = async (e) => {
     e.preventDefault()
@@ -29,6 +42,7 @@ const Result = () => {
       setLoading(false);
     }
   }
+
 
   // Fixed download function for base64 images
   const handleDownload = () => {
@@ -57,6 +71,7 @@ const Result = () => {
     }
   }
 
+
   return (
     <form onSubmit={onSubmitHandler} className='flex flex-col min-h-[90vh] justify-center items-center'>
       <div>
@@ -71,24 +86,27 @@ const Result = () => {
         <p className={!loading ? 'hidden' : 'text-center mt-2'}>Loading...</p>
       </div>
 
+
       {!isImageLoaded && (
-        <div className='flex w-full max-w-xl bg-neutral-500 text-white text-sm p-0.5 mt-10 rounded-full'>
-          <input 
+        <div className='flex items-start w-full max-w-xl bg-neutral-500 text-white text-sm p-0.5 mt-10 rounded-3xl'>
+          <textarea 
+            ref={textareaRef}
             onChange={(e) => setInput(e.target.value)} 
             value={input}
-            type="text" 
             placeholder='Describe the image'
-            className='flex-1 bg-transparent outline-none ml-8 max-sm:w-20 placeholder-gray-300'
+            rows={1}
+            className='flex-1 bg-transparent outline-none ml-8 mr-4 placeholder-gray-300 resize-none overflow-hidden py-3 min-h-[40px] max-h-[200px]'
           />
           <button 
             type='submit' 
             disabled={loading || !input.trim()}
-            className='bg-zinc-900 sm:px-16 py-3 px-4 text-white rounded-full hover:bg-zinc-800 disabled:opacity-50 disabled:cursor-not-allowed'
+            className='bg-zinc-900 sm:px-16 py-3 px-4 text-white rounded-full hover:bg-zinc-800 disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap flex-shrink-0'
           >
             Generate
           </button>
         </div>
       )}
+
 
       {isImageLoaded && (
         <div className='flex gap-2 flex-wrap justify-center text-white text-sm p-0.6 mt-10 rounded-full'>
@@ -96,7 +114,7 @@ const Result = () => {
             onClick={() => {
               setIsImageLoaded(false)
               setInput('')
-              setImage(assets.sample_img_1)
+              setImage(assets.animals)
             }} 
             className='bg-transparent border border-zinc-900 text-black px-8 py-3 rounded-full cursor-pointer hover:bg-gray-100 transition-colors'
           >
@@ -113,5 +131,6 @@ const Result = () => {
     </form>
   )
 }
+
 
 export default Result
