@@ -2,20 +2,22 @@ import React from 'react'
 import { testimonialsData } from '../assets/assets'
 import { assets } from '../assets/assets'
 
+
 const Testimonials = () => {
   return (
-    <div className="flex flex-col items-center justify-center my-20 py-12">
-      <h1 className='text-3xl sm:text-4xl font-semibold mb-2'>
+    <div className="flex flex-col items-center justify-center my-20 py-12 bg-[#F5F5F5] rounded-3xl">
+      <h1 className='text-3xl sm:text-4xl font-semibold mb-2 text-[#102837]'>
         Customer Testimonials
       </h1>
-      <p className='text-gray-500 mb-12'>
+      <p className='text-gray-600 mb-12'>
         Customers love our services
       </p>
+
 
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl px-4'>
         {testimonialsData.map((testimonial, index) => (
           <div 
-            className='group relative bg-gradient-to-br from-white/80 to-white/60 backdrop-blur-sm border border-white/20 rounded-2xl p-8 shadow-lg hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.02] transition-all duration-300 cursor-pointer overflow-hidden'
+            className='group relative bg-white backdrop-blur-sm border border-gray-200 rounded-2xl p-8 shadow-lg hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.02] transition-all duration-300 cursor-pointer overflow-hidden'
             key={index}
           >
             {/* Decorative gradient overlay */}
@@ -36,7 +38,7 @@ const Testimonials = () => {
                   className='w-16 h-16 rounded-full object-cover border-3 border-white shadow-lg group-hover:scale-110 transition-transform duration-300'
                 />
                 <div className='ml-4'>
-                  <h3 className='text-lg font-semibold text-gray-900 group-hover:text-blue-600 transition-colors duration-300'>
+                  <h3 className='text-lg font-semibold text-gray-900 group-hover:text-[#102837] transition-colors duration-300'>
                     {testimonial.name}
                   </h3>
                   <p className='text-sm text-gray-500 font-medium'>
@@ -44,6 +46,7 @@ const Testimonials = () => {
                   </p>
                 </div>
               </div>
+
 
               {/* Star rating */}
               <div className='flex mb-6 justify-center'>
@@ -57,19 +60,22 @@ const Testimonials = () => {
                 ))}
               </div>
 
+
               {/* Testimonial text */}
               <blockquote className='text-gray-700 leading-relaxed text-center italic relative z-10'>
                 "{testimonial.text}"
               </blockquote>
             </div>
 
+
             {/* Bottom accent line */}
-            <div className='absolute bottom-0 left-0 h-1 bg-gradient-to-r from-blue-500 to-purple-500 w-0 group-hover:w-full transition-all duration-500 rounded-full' />
+            <div className='absolute bottom-0 left-0 h-1 bg-gradient-to-r from-[#102837] to-blue-500 w-0 group-hover:w-full transition-all duration-500 rounded-full' />
           </div>
         ))}
       </div>
     </div>
   )
 }
+
 
 export default Testimonials
