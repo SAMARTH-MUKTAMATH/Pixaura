@@ -10,15 +10,23 @@ const Navbar = () => {
 
 
   return (
-    <div className='flex items-center justify-between py-2 px-4 sm:px-10 md:px-14 lg:px-28 relative bg-[#102837] shadow-md rounded-b-xl'>
+    <div className='flex items-center justify-between py-0 px-3 sm:px-8 md:px-12 lg:px-24 relative bg-[#102837] shadow-md rounded-b-xl'>
       {/* Logo Section - Increased mobile sizes */}
       <Link to="/" className="flex items-center gap-2 sm:gap-2 group m-0">
         <img 
           src={assets.favicon} 
           alt="Pixaura" 
           className='w-12 sm:w-14 md:w-16 lg:w-20 transition-transform duration-700 ease-in-out group-hover:rotate-[360deg] transform-gpu'
+          style={{ filter: 'brightness(0) saturate(100%) invert(95%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(95%) contrast(90%)' }}
         />
-        <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-[#E5E4E4] tracking-tight m-0">
+        <h1 
+          className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-[#E5E4E4] m-0"
+          style={{ 
+            fontFamily: 'Viora, serif',
+            fontWeight: '500',
+            letterSpacing: '0.01em'
+          }}
+        >
           Pixaura
         </h1>
       </Link>
@@ -69,7 +77,7 @@ const Navbar = () => {
 
 
       {/* Mobile Menu Dropdown - More gap added */}
-      <div className='sm:hidden absolute top-16 left-4 right-4 bg-[#E5E4E4] border border-[#102837] shadow-lg rounded-lg z-40 transition-all duration-300 peer-checked:translate-y-0 peer-checked:opacity-100 -translate-y-4 opacity-0 pointer-events-none peer-checked:pointer-events-auto'>
+      <div className='sm:hidden absolute top-8 left-3 right-3 bg-[#E5E4E4] border border-[#102837] shadow-lg rounded-lg z-40 transition-all duration-300 peer-checked:translate-y-0 peer-checked:opacity-100 -translate-y-4 opacity-0 pointer-events-none peer-checked:pointer-events-auto'>
         <div className='flex flex-col p-3 space-y-2'>
           {user ? (
             <>
