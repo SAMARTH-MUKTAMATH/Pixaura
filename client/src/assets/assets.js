@@ -93,32 +93,55 @@ export const stepsData = [
   },
 ];
 
-
-
-
 export const testimonialsData = [
     {
-        image:profile_img_1,
-        name:'Donald Jackman',
-        role:'Graphic Designer',
-        stars:5,
-        text:`I've been using bg.removal for nearly two years, primarily for Instagram, and it has been incredibly user-friendly, making my work much easier.`
+        image: profile_img_1,
+        name: 'Donald Jackman',
+        role: 'Graphic Designer',
+        stars: 5,
+        text: `This AI tool has transformed my workflow completely. Background removal is instant and incredibly accurate, even with complex hair details. Saves me hours every week!`
     },
     {
-        image:profile_img_2,
-        name:'Richard Nelson',
-        role:'Content Creator',
-        stars:5,
-        text:`I've been using bg.removal for nearly two years, primarily for Instagram, and it has been incredibly user-friendly, making my work much easier.`
+        image: profile_img_2,
+        name: 'Richard Nelson',
+        role: 'Content Creator',
+        stars: 5,
+        text: `As a content creator, speed matters. This platform delivers professional results in seconds. The AI is so smart - it handles tricky edges better than I could manually.`
     },
     {
-        image:profile_img_1,
-        name:'Donald Jackman',
-        role:' Graphic Designer',
-        stars:5,
-        text:`I've been using bg.removal for nearly two years, primarily for Instagram, and it has been incredibly user-friendly, making my work much easier.`
-    },
+        image: profile_img_1,
+        name: 'Sarah Mitchell',
+        role: 'E-commerce Manager',
+        stars: 5,
+        text: `We process hundreds of product images weekly. This tool cut our editing time by 80%. The quality is consistent and the batch processing feature is a game-changer!`
+    }
 ]
+
+
+
+// export const testimonialsData = [
+//     {
+//         image:profile_img_1,
+//         name:'Donald Jackman',
+//         role:'Graphic Designer',
+//         stars:5,
+//         text:`I've been using bg.removal for nearly two years, primarily for Instagram, and it has been incredibly user-friendly, making my work much easier.`
+//     },
+//     {
+//         image:profile_img_2,
+//         name:'Richard Nelson',
+//         role:'Content Creator',
+//         stars:5,
+//         text:`I've been using bg.removal for nearly two years, primarily for Instagram, and it has been incredibly user-friendly, making my work much easier.`
+//     },
+//     {
+//         image:profile_img_1,
+//         name:'Donald Jackman',
+//         role:' Graphic Designer',
+//         stars:5,
+//         text:`I've been using bg.removal for nearly two years, primarily for Instagram, and it has been incredibly user-friendly, making my work much easier.`
+//     },
+// ]
 
 export const plans = [
     {
