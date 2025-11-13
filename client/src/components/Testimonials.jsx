@@ -104,11 +104,11 @@ const Testimonials = () => {
             <div className='text-sm text-[#102837]/70 font-semibold'>Happy Clients</div>
           </div>
           <div className='flex flex-col items-center'>
-            <div className='text-4xl font-black text-[#102837] mb-1'>4.9/5</div>
+            <div className='text-4xl font-black text-[#102837] mb-1'>4.6/5</div>
             <div className='text-sm text-[#102837]/70 font-semibold'>Average Rating</div>
           </div>
           <div className='flex flex-col items-center'>
-            <div className='text-4xl font-black text-[#102837] mb-1'>98%</div>
+            <div className='text-4xl font-black text-[#102837] mb-1'>90%</div>
             <div className='text-sm text-[#102837]/70 font-semibold'>Satisfaction Rate</div>
           </div>
         </div>
