@@ -1,7 +1,6 @@
 import React from 'react'
 import { assets } from '../assets/assets'
-import { FaTwitter, FaLinkedin, FaEnvelope } from 'react-icons/fa'
-
+import { FaLinkedin, FaBriefcase } from 'react-icons/fa'
 
 const Footer = () => {
   return (
@@ -26,15 +25,7 @@ const Footer = () => {
        <p className='flex-1 border-l border-gray-400 pl-4 text-sm text-gray-600 max-sm:hidden'>@2025 Pixaura. All rights reserved</p>
        <div className='flex gap-3'>
          <a 
-           href="https://twitter.com" 
-           target="_blank" 
-           rel="noopener noreferrer"
-           className='w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:border-gray-900 hover:bg-gray-100 transition-all'
-         >
-           <FaTwitter className='text-gray-700 text-lg hover:text-gray-900' />
-         </a>
-         <a 
-           href="https://linkedin.com" 
+           href="https://www.linkedin.com/in/samarthmuktamath" 
            target="_blank" 
            rel="noopener noreferrer"
            className='w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:border-gray-900 hover:bg-gray-100 transition-all'
@@ -42,15 +33,16 @@ const Footer = () => {
            <FaLinkedin className='text-gray-700 text-lg hover:text-gray-900' />
          </a>
          <a 
-           href="mailto:contact@pixaura.com"
+           href="https://port-folio-sam.vercel.app/" 
+           target="_blank" 
+           rel="noopener noreferrer"
            className='w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:border-gray-900 hover:bg-gray-100 transition-all'
          >
-           <FaEnvelope className='text-gray-700 text-lg hover:text-gray-900' />
+           <FaBriefcase className='text-gray-700 text-lg hover:text-gray-900' />
          </a>
        </div>
     </div>
   )
 }
-
 
 export default Footer
