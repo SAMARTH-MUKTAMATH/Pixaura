@@ -4,8 +4,7 @@ import facebook_icon from './facebook_icon.svg'
 import instagram_icon from './instagram_icon.svg'
 import star_icon from './star_icon.svg'
 import rating_star from './rating_star.svg'
-import sample_img_1 from './sample_img_1.png'
-import sample_img_2 from './sample_img_2.png'
+
 import profile_img_1 from './profile_img_1.png'
 import profile_img_2 from './profile_img_2.png'
 import step_icon_1 from './step_icon_1.svg'
@@ -36,8 +35,7 @@ export const assets = {
   
     star_icon,
     rating_star,
-    sample_img_1,
-    sample_img_2,
+   
     email_icon,
     lock_icon,
     cross_icon,
