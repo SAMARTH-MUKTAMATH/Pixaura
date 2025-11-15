@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
+
 /* Viora Font - Custom Font */
 @font-face {
   font-family: 'Viora';
@@ -9,20 +10,28 @@
   font-display: swap;
 }
 
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+
 /* Optional: Custom styles */
 * {
   font-family: 'Outfit';
+  box-sizing: border-box;
 }
+
+
+html {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
 
 body {
   color: black;
-}
-
-/* Prevent accidental horizontal scroll on small devices (safe fallback). */
-body {
   overflow-x: hidden;
+  max-width: 100%;
+  position: relative;
 }
