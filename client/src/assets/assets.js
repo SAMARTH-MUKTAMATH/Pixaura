@@ -7,6 +7,9 @@ import rating_star from './rating_star.svg'
 
 import profile_img_1 from './profile_img_1.png'
 import profile_img_2 from './profile_img_2.png'
+import profile_img_3 from './profile_img_3.png'
+import profile_img_4 from './profile_img_4.png'
+import profile_img_5 from './profile_img_5.png'
 import step_icon_1 from './step_icon_1.svg'
 import step_icon_2 from './step_icon_2.svg'
 import step_icon_3 from './step_icon_3.svg'
@@ -28,30 +31,30 @@ import alien from './alien.png'
 import animals from './animals.png'
 
 export const assets = {
-    logo,
-    logo_icon,
-    facebook_icon,
-    instagram_icon,
-  
-    star_icon,
-    rating_star,
-   
-    email_icon,
-    lock_icon,
-    cross_icon,
-    star_group,
-    credit_star,
-    profile_icon,
-    favicon,
-    camera,
-    cartoon,
-    panda,
-    robot,
-    dog,
-    parot,
-    type,
-    alien,
-    animals,
+  logo,
+  logo_icon,
+  facebook_icon,
+  instagram_icon,
+
+  star_icon,
+  rating_star,
+
+  email_icon,
+  lock_icon,
+  cross_icon,
+  star_group,
+  credit_star,
+  profile_icon,
+  favicon,
+  camera,
+  cartoon,
+  panda,
+  robot,
+  dog,
+  parot,
+  type,
+  alien,
+  animals,
 }
 
 // export const stepsData = [
@@ -91,27 +94,27 @@ export const stepsData = [
 ];
 
 export const testimonialsData = [
-    {
-        image: profile_img_1,
-        name: 'Donald Jackman',
-        role: 'Graphic Designer',
-        stars: 5,
-        text: `This AI tool has transformed my workflow completely. Background removal is instant and incredibly accurate, even with complex hair details. Saves me hours every week!`
-    },
-    {
-        image: profile_img_2,
-        name: 'Richard Nelson',
-        role: 'Content Creator',
-        stars: 5,
-        text: `As a content creator, speed matters. This platform delivers professional results in seconds. The AI is so smart - it handles tricky edges better than I could manually.`
-    },
-    {
-        image: profile_img_1,
-        name: 'Sarah Mitchell',
-        role: 'E-commerce Manager',
-        stars: 5,
-        text: `We process hundreds of product images weekly. This tool cut our editing time by 80%. The quality is consistent and the batch processing feature is a game-changer!`
-    }
+  {
+    image: profile_img_4,
+    name: 'James Carter',
+    role: 'Graphic Designer',
+    stars: 5,
+    text: `This AI tool has transformed my workflow completely. Background removal is instant and incredibly accurate, even with complex hair details. Saves me hours every week!`
+  },
+  {
+    image: profile_img_5,
+    name: 'Liam Foster',
+    role: 'Content Creator',
+    stars: 5,
+    text: `As a content creator, speed matters. This platform delivers professional results in seconds. The AI is so smart - it handles tricky edges better than I could manually.`
+  },
+  {
+    image: profile_img_3,
+    name: 'Sarah Mitchell',
+    role: 'E-commerce Manager',
+    stars: 5,
+    text: `We process hundreds of product images weekly. This tool cut our editing time by 80%. The quality is consistent and the batch processing feature is a game-changer!`
+  }
 ]
 
 
@@ -141,22 +144,22 @@ export const testimonialsData = [
 // ]
 
 export const plans = [
-    {
-      id: 'Basic',
-      price: 10,
-      credits: 100,
-      desc: 'Best for personal use.'
-    },
-    {
-      id: 'Advanced',
-      price: 50,
-      credits: 500,
-      desc: 'Best for business use.'
-    },
-    {
-      id: 'Business',
-      price: 250,
-      credits: 5000,
-      desc: 'Best for enterprise use.'
-    },
-  ]
+  {
+    id: 'Basic',
+    price: 10,
+    credits: 100,
+    desc: 'Best for personal use.'
+  },
+  {
+    id: 'Advanced',
+    price: 50,
+    credits: 500,
+    desc: 'Best for business use.'
+  },
+  {
+    id: 'Business',
+    price: 250,
+    credits: 5000,
+    desc: 'Best for enterprise use.'
+  },
+]
